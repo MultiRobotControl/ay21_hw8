@@ -41,7 +41,7 @@ while true
     else
         %RABBIT_POSITION.Point.X = 20;
         %RABBIT_POSITION.Point.Y = -372;c
-        [u_c, r_c] = vbap_slsv(USV_ODOM, RABBIT_POSITION);
+        [u_c, r_c] = vbap_slsv_dist(USV_ODOM, RABBIT_POSITION);
     end
     
     

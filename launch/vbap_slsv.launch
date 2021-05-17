@@ -24,6 +24,17 @@
     
   </node>
 
-<include file="$(find mrc_examples)/launch/rabbit_w_visual"/>
+<!-- <include file="$(find mrc_examples)/launch/rabbit_w_visual.launch"/>-->
+
+  <!-- Spawn a visual model to serve as marker -->
+  <node name="spawn_rabbit" pkg="gazebo_ros" type="spawn_model"
+        args="-x 0 -y 0 -z 0 -file $(find mrc_examples)/urdf/rabbit.urdf
+              -urdf -model rabbit"/>
+
+  <!-- Convert PointStamped messages to model states -->
+  <node name="pointstamped2modelstate" pkg="mrc_examples" type="pointstamped2modelstate.py" output="screen">
+    <param name="model_name" value="rabbit"/>
+    <param name="reference_frame" value="world"/>
+  </node>
 
 </launch>
