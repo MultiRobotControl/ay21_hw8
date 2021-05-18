@@ -1,4 +1,4 @@
-function cora1_odom_callback(~, msg)
+function cora_odom_callback(topic, msg)
 
 % Example callback function to be called with odometry message
 
@@ -7,5 +7,6 @@ function cora1_odom_callback(~, msg)
 
 % Declare global variables to store odometry message
 global CORA1_ODOM;
+disp(topic)
 
 CORA1_ODOM = msg;
