@@ -16,15 +16,14 @@ dist2rabbit_y = RABBIT_POSITION.Point.Y - USV_ODOM.Pose.Pose.Position.Y;
 
 % Relative steering angle from CORA to rabbit
 psi_error = wrapToPi(atan2(dist2rabbit_y,dist2rabbit_x)-psi);
-
+    
 % control gains
-k_v = 0.2; % Surge Velocity gain
-k_h = 2; % Steering gain
+k_v = 0.25; % Surge Velocity gain
+k_h = 4; % Steering gain
 
 % control law 
 u_c = k_v * sqrt(dist2rabbit_x^2 +dist2rabbit_y^2);  % Surge Velocity Command
 r_c = k_h * psi_error;        % Yaw Rate Command i.e Turn Rate Cmd
 
-fprintf('x_err=%.2f, y_err=.2f, psi_err=%.2f, u_c=%.2f, r_c=%.2f \n',...
-    dist2rabbit_x,dist2rabbit_y,psi_error,u_c,r_c);
+
 return
