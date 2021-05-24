@@ -39,11 +39,4 @@ while true
     send(cmd_pub, cmd_msg);
     
     pause(0.1);
-<<<<<<< HEAD
 end
-=======
-end
-
-    
-
->>>>>>> 8010260adf856df9ed3a7fa56d205b289b45514c
