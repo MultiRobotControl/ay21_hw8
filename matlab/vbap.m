@@ -33,11 +33,7 @@ cmd_msg = rosmessage(cmd_pub);
 % Infinite loop
 while true
     % Call a function to implement the VBAP algorithm.
-<<<<<<< HEAD
     [v_c, r_c] = vbap_slsv(USV_ODOM, RABBIT_POSITION);
-=======
-    [v_c, r_c] = vbap_slsv(USV_ODOM, RABBIT_POSITION)
->>>>>>> ddc44c000667f9f0105d81b0086af4bfd0c220f7
     
     % Publish the results
     cmd_msg.Linear.X = v_c;
